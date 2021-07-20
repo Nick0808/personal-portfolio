@@ -118,7 +118,7 @@ img {
   grid-template-columns: 100%;
   grid-column-gap: 2rem;
   width: calc(100% - 2rem);
-  margin-left: var(mb-2);
+  margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
 
@@ -144,7 +144,7 @@ I-header {
   .nav_menu {
     position: fixed;
     top: var(--header-height);
-    right: 0;
+    right: -100%;
     width: 80%;
     height: 100%;
     padding: 2rem;
@@ -187,3 +187,17 @@ I-header {
 }
 
 /* Active menu */
+.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/* Show menu */
+.show {
+  right: 0;
+}
